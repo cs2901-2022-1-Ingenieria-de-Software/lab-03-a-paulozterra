@@ -20,7 +20,7 @@ public class Main {
         double resultFirst = mg.calculateTotal(testOrders);
         System.out.println(String.format("RESULTADO TOTAL 1 => %s", resultFirst));
 
-        double resultSecond = mg.calculateTotalForWithAdditionalByCountry(testOrders, 0.10, 0.20, 0.30);
+        double resultSecond = mg.calculateTotalForWithAdditionalByCountry(testOrders);
         System.out.println(String.format("RESULTADO TOTAL 2 => %s", resultSecond));
     }
 

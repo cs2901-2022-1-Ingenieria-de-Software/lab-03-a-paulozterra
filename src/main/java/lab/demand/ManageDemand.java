@@ -28,17 +28,18 @@ public class ManageDemand {
         return quantities * taxes;
     }
 
-    public double calculateTotalForWithAdditionalByCountry(List<Order> orders, double defaultAdditionalColombia, double defaultAdditionalPeru, double defaultAdditionalBrazil){
+    public double calculateTotalForWithAdditionalByCountry(List<Order> orders){
         // Calculate additionals by country
         double taxes = 0.0;
+
         for (Order order : orders) {
             String currCountry = order.getCountry();
             if (currCountry.equals("PE")) {
-                taxes += defaultAdditionalPeru;
+                taxes += 0.20;
             } else if (currCountry.equals("BR")) {
-                taxes += defaultAdditionalBrazil;
+                taxes += 0.30;
             } else {
-                taxes += defaultAdditionalColombia;
+                taxes += 0.10;
             }
         }
 
