@@ -34,13 +34,15 @@ public class ManageDemand {
 
         for (Order order : orders) {
             String currCountry = order.getCountry();
-            if (currCountry.equals("PE")) {
-                taxes += 0.20;
-            } else if (currCountry.equals("BR")) {
-                taxes += 0.30;
-            } else {
-                taxes += 0.10;
+            switch (currCountry) {
+                case "PE":
+                    taxes += 0.20;
+                case "BR":
+                    taxes += 0.30;
+                default:
+                    taxes += 0.10;
             }
+
         }
 
         // Calculate Total
